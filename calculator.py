@@ -1,3 +1,4 @@
+#Importing tkinter libary and creating a GUI window
 from tkinter import *
 
 root = Tk()
@@ -8,10 +9,11 @@ root.title('Simple Calculator')
 root.iconbitmap('c.ico')
 Label(root, text='SIMPLE CALCULATOR', font=('Arial bold', 10), bg='lavender').grid(row=0, column=1)
 
+#Creating a Enrty window to enter our numbers.
 e = Entry(root, width=15, borderwidth=5, font=('Arial bold', 30))
 e.grid(row=1, column=0, columnspan=3, padx=10, pady=10)
 
-
+#Creating functions.
 def button_click(number):
     current = e.get()
     e.delete(0, END)
@@ -101,6 +103,8 @@ def button_exit():
     root.destroy()
 
 
+
+#Creating buttons widgets for our calculator.
 Button(root, text="Remove", padx=30, pady=15, command=button_delete, border="4", bg='indianred').grid(row=1, column=3, )
 b1 = Button(root, text="1", padx=40, pady=20, command=lambda: button_click(1), border="4", bg='silver', )
 b2 = Button(root, text="2", padx=40, pady=20, command=lambda: button_click(2), border="4", bg='silver')
@@ -122,6 +126,8 @@ b_equal = Button(root, text="=", padx=85, pady=20, command=button_equal, border=
 b_clear = Button(root, text="Clear", padx=45, pady=20, command=button_clear, border="4", bg='indianred')
 b_exit = Button(root, text="Exit", padx=45, pady=10, command=button_exit, border="4", bg='black', fg='white')
 
+
+#displaying all Button widget usinf grid method.
 b1.grid(row=4, column=0, padx=5, pady=10)
 b2.grid(row=4, column=1, padx=5, pady=10)
 b3.grid(row=4, column=2, padx=5, pady=10)
